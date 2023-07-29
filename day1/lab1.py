@@ -311,5 +311,5 @@ print("{} {}".format(firstname,lastname))
 # In[ ]:
 
 
-get_ipython().system('jupyter nbconvert --to script lab1.ipynb')
+#get_ipython().system('jupyter nbconvert --to script lab1.ipynb')
 
