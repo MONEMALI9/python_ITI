@@ -26,6 +26,8 @@ print(info)
 
 # Q2 : write a paragraph about yourself in 5 lines -make
 # sure that the string is stored as a multiline string
+print("I am Abdelmonem Ali \
+      I am iti atudent ib bi track")
 
 # In[ ]:
 
