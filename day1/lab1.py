@@ -44,21 +44,25 @@ print(info)
 
 # In[1]:
 
-
-#grade = int(input("enter your grade : "))
-grade = 50
-if grade < 60:
-    print("failed")
-elif grade > 60 and grade < 65:
-    print("passed")
-elif grade > 65 and grade < 75:
-    print("good")
-elif grade > 75 and grade < 85:
-    print("very good")
-elif grade > 85 and grade <= 100:
-    print("Excellent")
-else:
-    print("error .... try again")
+#grade = 50
+try: 
+    grade = input("enter your grade : ")
+    if(grade.isnumeric()):
+        grade = float(grade)
+        if grade < 60:
+            print("failed")
+        elif grade > 60 and grade < 65:
+            print("passed")
+        elif grade > 65 and grade < 75:
+            print("good")
+        elif grade > 75 and grade < 85:
+            print("very good")
+        elif grade > 85 and grade <= 100:
+            print("Excellent")
+        else:
+            print("error .... try again")
+except:
+    print('please enter valid numeric value')
 
 
 # Q4 : Write a program that prints the weather state according to the temperature
@@ -67,34 +71,38 @@ else:
 # 3. If the temperature = 25 then print the “weather is fine”
 
 # In[2]:
-
-
-#temp = int(input("enter your grade : "))
-temp = 50
-if temp > 25:
-    print("the weather is hot")
-elif temp < 25:
-    print("he weather is cold")
-elif temp == 25 :
-    print("weather is fine")
-else:
-    print("error .... try again")
-
+#temp = 50
+try: 
+    temp = input("enter your grade : ")
+    if(temp.isnumeric()):
+        if temp > 25:
+            print("the weather is hot")
+        elif temp < 25:
+            print("he weather is cold")
+        elif temp == 25 :
+            print("weather is fine")
+        else:
+            print("error .... try again")  
+except:
+    print('please enter valid numeric value')
 
 # 5- write a program that checks if the number is greater
 # than 0 and then prints positive else prints negative
 
 # In[3]:
 
-
-#num = int(input("enter your number that you want to check if positve"))
-num = 5
-if num > 0:
-    print("positive")
-elif num < 0:
-    print("negative")
-else :
-    print("zero")
+#num = 5
+try: 
+    num = input("enter your number that you want to check if positve")
+    if(num.isnumeric()):
+        if num > 0:
+            print("positive")
+        elif num < 0:
+            print("negative")
+        else :
+            print("zero")
+except:
+    print('please enter valid numeric value')
 
 
 # 6- print the types of variables you entered before
@@ -201,15 +209,17 @@ else:
 
 # In[24]:
 
-
-#fnum = int(input("enter first number"))
-fnum = 10
-#snum = int(input("enter second number"))
-snum = 20
-if str(fnum).isnumeric() and str(snum).isnumeric():
-    print(fnum*snum)
-else:
-    print("error ....")
+try: 
+    fnum = input("enter first number")
+    #fnum = 10
+    snum = input("enter second number")
+    #snum = 20
+    if fnum.isnumeric() and snum.isnumeric():
+        print(float(fnum)*float(snum))
+    else:
+        print("error ....")
+except:
+    print('please enter valid numeric value')
 
 
 # ## Part 02 
