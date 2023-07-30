@@ -115,5 +115,5 @@ for i in range(mp):
 # In[11]:
 
 
-get_ipython().system('jupyter nbconvert --to script lab2.ipynb')
+#get_ipython().system('jupyter nbconvert --to script lab2.ipynb')
 
