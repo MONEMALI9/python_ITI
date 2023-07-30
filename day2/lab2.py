@@ -80,23 +80,23 @@ print(f"the loactions of 'i' char in word: {l}")
 
 # 6. write a programe that generate a multiplication  table from 1 to number based
 
-# In[18]:
+# In[10]:
 
 
-try: 
-    num = input("enter number : ")
-    if(num.isnumeric()):
-        num = int(num)
-        bigl=[]
-        for i in range(1,num+1):
-            for j in range (i,i+1):
-                for k in range (i,j+1):
-                    l=[]
-                    l.append(j)
-                bigl.append[l]
-        print(bigl)
-except:
-    print('please enter valid numeric value')
+def multiplication_table(num):
+    for i in range(1, num + 1):
+        print(f"Multiplication table for {i}:")
+        for j in range(1, 13):
+            result = i * j
+            print(f"{i} x {j} = {result}")
+        print()
+
+if __name__ == "__main__":
+    try:
+        num = int(input("Enter a number to generate the multiplication table: "))
+        multiplication_table(num)
+    except ValueError:
+        print("Please enter a valid integer.")
 
 
 # write a program to build a mario pyramid
@@ -112,16 +112,8 @@ for i in range(mp):
 
 # !jupyter nbconvert --to script lab1.ipynb
 
-# In[9]:
+# In[11]:
 
 
 get_ipython().system('jupyter nbconvert --to script lab2.ipynb')
 
-
-# 
-
-# 
-
-# 
-
-# 
