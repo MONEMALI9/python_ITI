@@ -186,14 +186,14 @@ if __name__ == "__main__":
     result = track_number()
 
 
-# Word guessing game (hangman)
-# 1. A list of words will be hardcoded in your program, out of which the interpreter will
-# 2. choose 1 random word.
-# 3. The user first must input their names
-# 4. Ask the user to guess any alphabet. If the random word contains that alphabet, it
-# 5. will be shown as the output(with correct placement)
-# 6. Else the program will ask you to guess another alphabet.
-# 7. Give 7 turns maximum to guess the complete word.
+# 7. Word guessing game (hangman)
+#     1. A list of words will be hardcoded in your program, out of which the interpreter will
+#     2. choose 1 random word.
+#     3. The user first must input their names
+#     4. Ask the user to guess any alphabet. If the random word contains that alphabet, it
+#     5. will be shown as the output(with correct placement)
+#     6. Else the program will ask you to guess another alphabet.
+#     7. Give 7 turns maximum to guess the complete word.
 
 # In[ ]:
 
@@ -201,7 +201,7 @@ if __name__ == "__main__":
 
 
 
-# In[7]:
+# In[8]:
 
 
 get_ipython().system('jupyter nbconvert --to script lab3.ipynb')
