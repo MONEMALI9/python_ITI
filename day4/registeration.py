@@ -1,3 +1,8 @@
+import random
+import re
+import string
+
+
 def user_name(fname = "monem",lname = "ali"):
     
     while True:
@@ -35,7 +40,6 @@ def user_national_id(nid = "11111111111111"):
             
 
 def is_valid_email(email):
-    import re
     
     # Regular expression pattern for email validation
     pattern = r'^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$'
@@ -51,7 +55,6 @@ def is_valid_email(email):
 
 
 def generate_password():
-    import random
     
     lower_char = "abcdefghijklmnopqrstuvwxyz"
     upper_char = lower_char.upper()
@@ -66,51 +69,83 @@ def generate_password():
     return password
 
 
-
-def create_password(order = "generate"):
-    order = input("enter your order if you want to auto generate \
-        password  type \" generate\" \
-            otherwise enter the custom password \
-                type \" create\" ").strip()
-     
+def create_password():
+    
+    order = input("Enter 'generate' to auto-generate a password, "
+                  "otherwise enter 'create' to input your own password: ").strip().lower()
+    
     if order == "generate" or order != "create":
-        passwrd=generate_password()
-        return passwrd
+        return generate_password()
     else:
-        print("instructions : \n \
-            1. your password must contain numbers, characters, symbols \n\
-            2. @ least contain one upper character \n\
-            3. @ least contain one sympol")
+        print("Instructions:\n"
+              "1. Your password must contain numbers, characters, and symbols.\n"
+              "2. It should contain at least one uppercase character.\n"
+              "3. It should contain at least one symbol.")
+        
         while True:
-            your_pass = input("enter your own password").strip()
+            your_pass = input("Enter your own password: ").strip()
             
-            lower_char = "abcdefghijklmnopqrstuvwxyz"
-            lower_char.split()
-            
-            upper_char = upper_char.upper()
-            upper_char.split()
-            
-            numbers = "1234567890"
-            numbers.split()
-            
-            symbols = "[]{}()!@#$%^&*\\/.,\';:"
-            symbols.split()
+            lower_char = string.ascii_lowercase
+            upper_char = string.ascii_uppercase
+            numbers = string.digits
+            symbols = "[]{}()!@#$%^&*\\/.,';:"
             
             if len(your_pass) >= 8:
                 fupass = flpass = fspass = fnpass = 0
                 for i in upper_char: 
                     if i in your_pass:
-                        fupass+=1
-                for j in numbers :
+                        fupass += 1
+                        break
+                for j in numbers:
                     if j in your_pass:
-                        fnpass+=1
+                        fnpass += 1
+                        break
                 for k in symbols:
                     if k in your_pass:
-                        fspass+=1
+                        fspass += 1
+                        break
                 for z in lower_char:
-                    if z in lower_char :
-                        flpass+=1
-                if fupass>0 and flpass>0 and fspass>0 and fnpass>0:
-                    return your_pass 
+                    if z in your_pass:
+                        flpass += 1
+                        break
+                
+                if fupass > 0 and flpass > 0 and fspass > 0 and fnpass > 0:
+                    return your_pass
+                else:
+                    print("Your password must contain at least one uppercase character, "
+                          "one lowercase character, one symbol, and one number.")
             else:
-                print("you must enter 8 or more.") 
+                print("Your password must be 8 characters or longer.")
+
+if __name__ == "__main__":
+    print(create_password())
+                
+def askfordate(message): 
+    import re
+    while True: 
+        inputdate = input(message+"like dd/mm/yyy") 
+        
+        pattern = r"\d{4}/\d{2}/\d{2}"
+        if re.fullmatch(pattern, inputdate):
+            return inputdate 
+        
+        print("--- not valid date ----")
+
+
+def is_valid_egyptian_phone_number(phone_number):
+    while True:
+        # Regular expression pattern for Egyptian phone numbers
+        pattern = r'^01[0-9]{9}$'
+
+        # Use the `re.fullmatch` function to match the pattern against the phone number
+        match = re.fullmatch(pattern, phone_number)
+
+        # If there is a match, then it's a valid Egyptian phone number
+        if match:
+            x = "Valid Egyptian phone number!"
+            return x
+        else:
+            print("Invalid Egyptian phone number. Please enter a valid number in the format 01X XXXX XXXX.")
+if __name__ == "__main__":
+    phone_number = input("Enter your Egyptian phone number (01X XXXX XXXX): ")
+    
