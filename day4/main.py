@@ -40,13 +40,10 @@ def main():
             # Store the email and password in the dictionary  
             # convert or dump a Python Dictionary to JSON String, and write this JSON string to a file named data.json.          
             jsonString = json.dumps(registered_users)
-            
             jsonFile = open("data.json", "a")
-            
-            jsonFile.write(jsonString)
-            
+            jsonFile.write(jsonString)        
             jsonFile.close()
-            
+    
             print("Account registered successfully!")
             
             break
