@@ -21,18 +21,12 @@ def main():
         
         elif (choice=="register"):
 
-            user_name = registeration.user_name()
-                
+            user_name = registeration.user_name()  
             national_id = registeration.user_national_id()
-             
-            email = registeration.is_valid_email(input("enter your email :"))
-          
+            email = registeration.is_valid_email(input("enter your email : "))
             password_creation = registeration.create_password()
-               
-            check_date = registeration.askfordate(input("enter date :" +"like dd/mm/yyy"))
-                
+            check_date = registeration.askfordate(input("enter date :" +"like dd/mm/yyy : "))
             check_phone_number = registeration.is_valid_egyptian_phone_number()
-            
             
             # Dictionary to store registered users' email and password
             registered_users = [{"user_name" : user_name,

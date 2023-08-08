@@ -69,7 +69,7 @@ def generate_password():
 def create_password():
     
     order = input("Enter 'generate' to auto-generate a password, "
-                  "otherwise enter 'create' to input your own password: ").strip().lower()
+                  "otherwise enter 'create' to input your own password : ").strip().lower()
     
     if order == "generate" or order != "create":
         return generate_password()
@@ -80,7 +80,7 @@ def create_password():
               "3. It should contain at least one symbol.")
         
         while True:
-            your_pass = input("Enter your own password: ").strip()
+            your_pass = input("Enter your own password : ").strip()
             
             lower_char = string.ascii_lowercase
             upper_char = string.ascii_uppercase
@@ -126,7 +126,7 @@ def askfordate(message):
 
 def is_valid_egyptian_phone_number():
     while True:
-        phone_number = input("Enter your Egyptian phone number (01X XXXX XXXX): ")
+        phone_number = input("Enter your Egyptian phone number (01X XXXX XXXX) : ")
 
         # Regular expression pattern for Egyptian phone numbers
         pattern = r'^01[0-9]{9}$'
