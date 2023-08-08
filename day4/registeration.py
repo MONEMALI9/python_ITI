@@ -3,7 +3,7 @@ import re
 import string
 
 
-def user_name(fname = "monem",lname = "ali"):
+def user_name():
     
     while True:
         fname = input("enter your first name : ").strip()
@@ -12,7 +12,7 @@ def user_name(fname = "monem",lname = "ali"):
         flag_fname = flag_lname = False
         
         if fname.isalpha() and lname.isalpha():
-            return fname , lname
+            return fname + " "+ lname
         else:
             if (not flag_fname):
                 print("your first name is not validator....try again")
@@ -20,7 +20,7 @@ def user_name(fname = "monem",lname = "ali"):
                 print("your last name is not validator....try again")
             
                
-def user_national_id(nid = "11111111111111"):
+def user_national_id():
     
     while True:
         nid = input("enter national id number \

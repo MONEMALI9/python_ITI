@@ -52,7 +52,8 @@ def main():
             
             jsonFile.close()
             
-            print("Account registered successfully!")            
+            print("Account registered successfully!")
+            
             break
         
         else :

@@ -12,10 +12,8 @@ def get_value_from_json(file_path, key):
 
 def authenticate_user(email, password):
     # Check if the provided email is in the registered_users dictionary
-    if email in get_value_from_json(file_path, key):
-        # If the provided password matches the stored password for the email, return True
-        if registered_users[email] == password:
-            return True
+    if email in get_value_from_json("data.json", email):
+        return True
     return False
 
 def login():
