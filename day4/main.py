@@ -1,3 +1,4 @@
+import registeration
 from registeration import *
 from login import *
 import json
@@ -9,8 +10,7 @@ def check_input(choice):
 
 def main():
     while True:
-        choice = input("please enter login \
-            or register to continue\n")
+        choice = input("please enter login or register to continue\n")
         choice = check_input(choice)
         
         if(choice == "login"):
@@ -20,17 +20,17 @@ def main():
         
         elif (choice=="register"):
 
-            user_name = user_name()
+            user_name = registeration.user_name()
                 
-            national_id = user_national_id()
+            national_id = registeration.user_national_id()
              
-            email = is_valid_email(input("enter your email :"))
+            email = registeration.is_valid_email(input("enter your email :"))
           
-            password_creation = create_password()
+            password_creation = registeration.create_password()
                
-            check_date = askfordate(input("enter date :" +"like dd/mm/yyy"))
+            check_date = registeration.askfordate(input("enter date :" +"like dd/mm/yyy"))
                 
-            check_phone_number = is_valid_egyptian_phone_number()
+            check_phone_number = registeration.is_valid_egyptian_phone_number()
             
             
             # Dictionary to store registered users' email and password

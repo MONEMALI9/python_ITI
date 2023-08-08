@@ -23,10 +23,8 @@ def user_name():
 def user_national_id():
     
     while True:
-        nid = input("enter national id number \
-            without any space or special character \
-                fully 14 digits").strip()
-        if len(id) == 14:
+        nid = input("enter national id number without any space or special character fully 14 digits : ").strip()
+        if len(nid) == 14:
             flag_nid = False
             
             if nid.isdigit():
@@ -122,8 +120,8 @@ def askfordate(message):
         pattern = r"\d{4}/\d{2}/\d{2}"
         if re.fullmatch(pattern, message):
             return message 
-        
-        print("--- not valid date ----")
+        else:
+            print("--- not valid date ----")
 
 
 def is_valid_egyptian_phone_number():
