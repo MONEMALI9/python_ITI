@@ -40,19 +40,18 @@ def user_national_id(nid = "11111111111111"):
             
 
 def is_valid_email(email):
-    
-    # Regular expression pattern for email validation
-    pattern = r'^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$'
+    while True:
+        # Regular expression pattern for email validation
+        pattern = r'^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$'
 
-    # Use the `re.match` function to match the pattern against the email
-    match = re.match(pattern, email)
+        # Use the `re.match` function to match the pattern against the email
+        match = re.match(pattern, email)
 
-    # If there is a match and it spans the entire email length, then it's valid
-    if match and match.span()[1] == len(email):
-        return True
-    else:
-        return False
-
+        # If there is a match and it spans the entire email length, then it's valid
+        if match and match.span()[1] == len(email):
+            return email
+        else:
+            print("not valid email ... try again")
 
 def generate_password():
     
@@ -116,24 +115,21 @@ def create_password():
                           "one lowercase character, one symbol, and one number.")
             else:
                 print("Your password must be 8 characters or longer.")
-
-if __name__ == "__main__":
-    print(create_password())
                 
 def askfordate(message): 
     import re
-    while True: 
-        inputdate = input(message+"like dd/mm/yyy") 
-        
+    while True:         
         pattern = r"\d{4}/\d{2}/\d{2}"
-        if re.fullmatch(pattern, inputdate):
-            return inputdate 
+        if re.fullmatch(pattern, message):
+            return message 
         
         print("--- not valid date ----")
 
 
-def is_valid_egyptian_phone_number(phone_number):
+def is_valid_egyptian_phone_number():
     while True:
+        phone_number = input("Enter your Egyptian phone number (01X XXXX XXXX): ")
+
         # Regular expression pattern for Egyptian phone numbers
         pattern = r'^01[0-9]{9}$'
 
@@ -146,6 +142,3 @@ def is_valid_egyptian_phone_number(phone_number):
             return x
         else:
             print("Invalid Egyptian phone number. Please enter a valid number in the format 01X XXXX XXXX.")
-if __name__ == "__main__":
-    phone_number = input("Enter your Egyptian phone number (01X XXXX XXXX): ")
-    

@@ -1,29 +1,29 @@
-# Dictionary to store registered users' email and password
-registered_users = {}
+import json
 
-def register_user():
-    email = input("Enter your email: ")
-    password = input("Enter your password: ")
+def get_value_from_json(file_path, key):
+    with open(file_path, 'r') as json_file:
+        json_data = json.load(json_file)
+    
+    # Access the value of the specified key
+    value = json_data.get(key)  # Use .get() method to safely access the key
+    
+    return value
 
-    # Store the email and password in the dictionary
-    registered_users[email] = password
-    print("Account registered successfully!")
+
+def authenticate_user(email, password):
+    # Check if the provided email is in the registered_users dictionary
+    if email in get_value_from_json(file_path, key):
+        # If the provided password matches the stored password for the email, return True
+        if registered_users[email] == password:
+            return True
+    return False
 
 def login():
     email = input("Enter your email: ")
     password = input("Enter your password: ")
 
-    # Check if the email is registered and the password is correct
-    if email in registered_users and registered_users[email] == password:
-        print("Login successful!")
+    if authenticate_user(email, password):
+        return "User Name", email  # Replace "User Name" with the actual user's name
     else:
-        print("Invalid email or password. Please try again.")
-
-if __name__ == "__main__":
-    # Registration phase
-    print("Registration:")
-    register_user()
-
-    # Login phase
-    print("\nLogin:")
-    login()
+        print("Invalid credentials. Please try again.")
+        return None, None
