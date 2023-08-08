@@ -12,7 +12,7 @@ def get_value_from_json(file_path, key):
 
 def authenticate_user(email, password):
     # Check if the provided email is in the registered_users dictionary
-    if email in get_value_from_json("data.json", email):
+    if email in get_value_from_json("data.json", email) and password in get_value_from_json("data.json", password):
         return True
     return False
 
